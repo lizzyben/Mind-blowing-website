@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Age and Name</title>
+	<script>
+		function displayMessage() {
+			var name = document.getElementById("name").value.trim();
+			var age = parseInt(document.getElementById("age").value);
+			var output = document.getElementById("output");
+			if (name.length == 0 || isNaN(age) || age > 1000 || name.length > 50) {
+				output.innerHTML = "Please enter a valid name and age.";
+			} else {
+				output.innerHTML = "You are " + age + " years old and your name is " + name + ".";
+			}
+		}
+	</script>
+</head>
+<body>
+	<h1>Enter Your Name and Age</h1>
+	<form>
+		<label for="name">Name:</label>
+		<input type="text" id="name" name="name" maxlength="50"><br><br>
+		<label for="age">Age:</label>
+		<input type="number" id="age" name="age" min="1" max="1000"><br><br>
+		<input type="button" value="Submit" onclick="displayMessage()">
+	</form>
+	<div id="output"></div>
+</body>
+</html>
